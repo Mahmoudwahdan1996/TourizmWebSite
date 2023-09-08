@@ -1,0 +1,25 @@
+<svg width="117" height="48" viewBox="0 0 117 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-6.4%" y="-12.5%" width="112.8%" height="135%" filterUnits="objectBoundingBox" id="g6ix1lvjbb">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0.0470588235 0 0 0 0 0.674509804 0 0 0 0 0.615686275 0 0 0 0.331239073 0" in="shadowBlurOuter1"/>
+        </filter>
+        <path d="M0 0h89c11.046 0 20 8.954 20 20s-8.954 20-20 20H0V0z" id="xdvt95ghia"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(4 2)">
+            <mask id="3y4ig7wntc" fill="#fff">
+                <use xlink:href="#xdvt95ghia"/>
+            </mask>
+            <use fill="#000" filter="url(#g6ix1lvjbb)" xlink:href="#xdvt95ghia"/>
+            <path stroke="#0CAC9D" stroke-width="3" d="M89 1.5c5.109 0 9.734 2.07 13.081 5.419A18.442 18.442 0 0 1 107.5 20c0 5.109-2.07 9.734-5.419 13.081A18.442 18.442 0 0 1 89 38.5H1.5v-37z" stroke-linejoin="square" fill="#0CAC9D"/>
+            <path d="M69-.571h33c8.284 0 15 6.715 15 15V25.57c0 8.285-6.716 15-15 15H69V-.57z" fill="#FFF" mask="url(#3y4ig7wntc)"/>
+        </g>
+        <path d="M105.634 23.143c-.722.367-1.41.838-2.172 1.085-1.506.483-3.551.086-6.422.259a18 18 0 0 0-1.237.12c-.218.19-.573.523-.986.954-2.491 2.642-3.002 4.359-4.978 7.013-.424.568-1.094.953-1.656 1.424-.103-.035-.206-.069-.315-.103.43-1.833.705-3.004.877-3.717.269-1.131.383-2.291.601-3.428.166-.89.281-1.42-.028-1.844-.201-.27-.54-.46-1.828-.597a17.421 17.421 0 0 0-3.008-.052 9.902 9.902 0 0 1-.378.672c-.246.408-.59.993-1.06 1.493a6.434 6.434 0 0 1-1.713 1.287c0-1.028 0-2.056-.006-3.17v-.77a2.104 2.104 0 0 1-.75-.402c-.218-.19-.544-.46-.573-.873-.04-.535.43-.92.584-1.046.315-.27.66-.356.837-.39l.034-1.109c.03-.948.057-1.924.092-2.987.63.293 1.1.661 1.455 1.075.252.298.252.425.7 1.206.555.953.841 1.43 1.22 1.608.372.178.521.017 1.5-.063 1.713-.138 2.446.247 2.882-.247.23-.253.24-.592.24-.862.007-2.458-.566-4.94-.566-4.94a43.52 43.52 0 0 1-.642-3.457l.326-.138c.557.506 1.243.925 1.65 1.534 1.834 2.694 2.286 4.417 4.67 7.23.383.449.71.788.905.983.234.04.624.103 1.1.16 3.557.443 4.995-.148 6.949.707.596.265 1.123.69 1.68 1.04l.016.345z" fill="#FF6121"/>
+        <text font-family="Tajawal-Bold, Tajawal" font-size="24" font-weight="bold" fill="#FFF" transform="translate(12 11.144)">
+                            <tspan x="3.228" y="17.856">Otas </tspan>
+                        </text>
+    </g>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "validation": {
+    "required": "%{attribute} field is required",
+    "is_required": "Is Required",
+    "maxLength": "%{attribute} field must be at most %{max} characters long",
+    "minLength": "%{attribute} field must be %{min} characters at least",
+    "minImageCount": "%{attribute} field must be at least %{min} image",
+    "maxImageCount": "%{attribute} field must be less %{max} image",
+    "valid": "must be valid",
+    "number": " must be numbers",
+    "set_as_default_address": "Set as default Address",
+    "add_address": "Add New address",
+    "logout": "Logout Out",
+    "password_min": "must be 6 numbers",
+    "numeric": "must be numbers",
+    "email": "%{attribute} field is not valid Email Address",
+    "validPhoneNumber": "The phone number not valid",
+    "maxWords": "This field must be less than %{maxWords} ",
+    "validPhoneOrEmail": "Invalid Phone Or Email",
+    "alpha":"must be only alphabet characters."
+  }
+ 
+}

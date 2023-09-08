@@ -1,0 +1,23 @@
+{
+  "validation": {
+    "required": "حقل %{attribute} يجب ادخاله",
+    "is_required": " هذا الحقل مطلوب",
+    "maxLength": "حقل %{attribute} لا يجب أن يزيد عن %{max} حرف",
+    "minLength": "حقل %{attribute} لا يجب أن يقل عن %{min} حرف",
+    "minImageCount": "%{attribute} يجب ان يكون علي الاقل  %{min} صور",
+    "maxImageCount": "%{attribute} يجب ان يكون اقل من %{max} صور",
+    "valid": "يجب أن يكون صحيح",
+    "number": " يجب أن يكون أرقام",
+    "set_as_default_address": "تثبيت كعنوان رئيسى",
+    "add_address": "أضف عنون جديد",
+    "signout": "تسجيل الخروج",
+    "password_min": "يجب أن يكون %{min} أرقام على الأكثر",
+    "numeric": "يجب أن يكون رقم",
+    "email": "يجب أن يكون البريد الإكتروني صحيح",
+    "maxWords": "هذا الحقل يجب ان يكون اقل من %{maxWords} كلمة",
+    "validPhoneNumber": "تأكد من الرقم المدخل",
+    "validPhoneOrEmail": "تأكد من ادخال رقم الجوال او البريد اﻷلكتروني بطريقة صحيحة",
+    "alpha": " يجب ان يكون حروف ابجديه فقط"
+  }
+  
+}
