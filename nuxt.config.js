@@ -23,7 +23,8 @@ export default {
       },
       { hid: "description", name: "description", content: "" },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' } ,
+    { rel:"stylesheet", href:"https://cdn.jsdelivr.xyz/npm/@mdi/font@latest/css/materialdesignicons.min.css"}],
     script: [
      
       {
@@ -162,7 +163,6 @@ export default {
     { src: "@/plugins/api.js" },
     { src: "@/plugins/vuetify.js" },
     { src: "@/plugins/initializer.js", ssr: false },
-    { src: "@/plugins/TableHeaders.js", ssr: false },
     { src: "@/plugins/facebook.js", ssr: false },
     { src: "@/plugins/vuelidate.js" },
     { src: "@/plugins/toasted.js", ssr: false },

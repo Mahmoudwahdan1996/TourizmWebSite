@@ -1,33 +1,72 @@
 <template>
   <div class="phone-component">
     <v-label for="phone">
-      <b>{{ $t("fields.phone") }}</b>
+      <b class="secondary--text">{{ $t("fields.phone") }}</b>
     </v-label>
-    <v-text-field class="mt-1" v-bind="$attrs" id="phone" v-model="form.phone" rounded filled flat type="number" v-on="$listeners">
+    <v-text-field
+      :autofocus="focus"
+      :hint="$t(`hint_${name}`)"
+      persistent-hint
+      class="mt-1"
+      v-bind="attrs"
+      :id="name"
+      v-model="form[name]"
+      rounded
+      filled
+      flat
+      v-on="listeners"
+      type="number"
+    >
       <template #append>
         <v-list-item class="justify-center px-0 country-dropdown">
-          <v-menu rounded offset-y transition="slide-x-transition" max-height="300" @click.stop>
-            <template #activator="{ attrs, on :{click} }">
-              <v-btn small color="secondary"  depressed min-width="60" height="100%" v-bind="attrs"
-                :loading="loading" v-on:click.stop="click">
-                <span v-if="selectedCountry" >
+          <v-menu
+            rounded
+            offset-y
+            transition="slide-x-transition"
+            max-height="300"
+            @click.stop
+          >
+            <template #activator="{ attrs, on: { click } }">
+              <v-btn
+                small
+                depressed
+                min-width="60"
+                height="100%"
+                v-bind="attrs"
+                :loading="loading"
+                v-on:click.stop="click"
+              >
+                <span v-if="selectedCountry">
                   <span style="direction: ltr">
                     ({{ `${form.country_code.substring(2)}+` }})
                   </span>
-                  <v-icon left class="mx-1 font-flag" v-text="selectedCountry.emoji_flag" />
+                  <v-icon
+                    left
+                    class="mx-1 font-flag"
+                    v-text="selectedCountry.flag"
+                  />
                 </span>
                 <v-icon right x-small v-text="'$arrowDown'" />
               </v-btn>
             </template>
             <v-list v-if="sharedCountries" class="pa-0">
-              <v-list-item v-for="(country, index) in sharedCountries" :key="index" :active-class="
-                country.phone_code === form.country_code ? 'active-item' : ''
-              " :input-value="country.code" @click.prevent="handleCountryCode(country)">
-                <v-list-item-title style="cursor: pointer" class="d-flex align-center justify-center">
+              <v-list-item
+                v-for="(country, index) in sharedCountries"
+                :key="index"
+                :active-class="
+                  country.phone_code === form.country_code ? 'active-item' : ''
+                "
+                :input-value="country.code"
+                @click.prevent="handleCountryCode(country)"
+              >
+                <v-list-item-title
+                  style="cursor: pointer"
+                  class="d-flex align-center justify-center"
+                >
                   <span class="text-capitalize" style="direction: ltr">{{
-                  `+${country.phone_code.substring(2)}`
+                    `+${country.phone_code.substring(2)}`
                   }}</span>
-                  <v-icon left class="mx-1 font-flag" v-text="country.emoji_flag" />
+                  <v-icon left class="mx-1 font-flag" v-text="country.flag" />
                 </v-list-item-title>
               </v-list-item>
             </v-list>
@@ -38,16 +77,32 @@
   </div>
 </template>
 
+
 <script>
 import { mapGetters } from "vuex";
 
 export default {
-  name: "PhoneComponent",
-  inheritAttrs: false,
+  name: "InputTypePhone",
   props: {
+    attrs: {
+      type: Object,
+      default: () => ({}),
+    },
+    listeners: {
+      type: Object,
+      default: () => ({}),
+    },
     form: {
       type: Object,
-      default: () => { },
+      default: () => {},
+    },
+    name: {
+      type: String,
+      default: () => "",
+    },
+    focus: {
+      type: Boolean,
+      default: () => false,
     },
   },
   data() {
@@ -108,3 +163,10 @@ export default {
 </script>
 
 
+<style lang="scss">
+.phone-component {
+  .v-input__append-inner {
+    margin: 0 !important;
+  }
+}
+</style>
