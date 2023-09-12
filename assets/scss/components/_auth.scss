@@ -1,0 +1,110 @@
+.auth {
+  min-height: 100vh;
+
+  &__right {
+    min-height: 110vh;
+    background-size: 100% 120%;
+    position: relative;
+    overflow: hidden;
+
+    &__description {
+      padding: 10px 29px 21px;
+      margin: 0 67px;
+      border-radius: 16px;
+      background-color: rgba(255, 255, 255, 0.29);
+      position: absolute;
+      bottom: 100px;
+    }
+
+    img {
+      position: absolute;
+      top: 24%;
+      margin: 0 -5px;
+      animation: plane 2s ease;
+
+      @include langLtr {
+        transform: rotateX(0) rotateY(180deg);
+      }
+    }
+  }
+
+  &__left {
+    &__card {
+      background-image: url(../images/auth/bordering.svg);
+      background-size: 92% 26%;
+      background-position: -58px -35px;
+
+      @include langLtr {
+        background-position: -18px -35px;
+      }
+    }
+
+    &__go-home {
+      max-width: 480px;
+      margin: 20px auto;
+
+      p {
+        color: #000 !important;
+      }
+    }
+
+    &__intro {
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 5px;
+        height: 41px;
+        background-color: var(--secondary) !important;
+        display: block;
+        position: absolute;
+        z-index: 9;
+        right: -1px;
+        top: 9px;
+
+        @include langLtr {
+          right: unset;
+          left: -1px;
+        }
+      }
+    }
+  }
+
+  &--reset-password {
+    .v-card {
+      padding: 125px 0 !important;
+    }
+  }
+
+  &--success-password {
+    .v-card {
+      padding: 125px 0 30px 0 !important;
+    }
+  }
+
+  &--new-password {
+    .v-card {
+      padding: 125px 0 30px 0 !important;
+    }
+  }
+
+  .arrow {
+    @include langLtr {
+      transform: rotate(179deg);
+    }
+  }
+
+  .checked {
+    &--active {
+      .mdi-checkbox-marked {
+        color: #fff !important;
+      }
+    }
+
+    &__img {
+      margin: 0px -12px;
+      position: relative;
+      left: 20px;
+    }
+  }
+}
