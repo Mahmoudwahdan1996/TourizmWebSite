@@ -1,5 +1,5 @@
 <template>
-  <main class="auth auth--login mt-8">
+  <main class="auth auth--login">
     <v-row no-gutters>
       <v-col cols="12" md="12">
         <v-row no-gutters class="fill-height">
@@ -10,12 +10,7 @@
             />
             <LazyAuthLoginForm />
           </LazyAuthLeftSide>
-          <LazyAuthRightSide image="login.webp">
-            <LazyAuthRightSideDescription
-              title="feature"
-              description="feature_content"
-            />
-          </LazyAuthRightSide>
+          <LazyAuthRightSide image="login.webp" />
         </v-row>
       </v-col>
     </v-row>
