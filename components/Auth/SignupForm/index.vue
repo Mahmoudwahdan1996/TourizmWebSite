@@ -12,7 +12,7 @@
                 elevation="2"
                 :outlined="!form.isClint"
                 color="primary"
-                @click="() => (this.form.isClint = true)"
+                @click="() => (form.isClint = true)"
               >
                 {{ $t("user") }}
               </v-btn>
@@ -22,9 +22,9 @@
                 elevation="2"
                 :outlined="form.isClint"
                 color="primary"
-                @click="() => (this.form.isClint = false)"
+                @click="() => (form.isClint = false)"
               >
-                {{ $t("guaid") }}
+                {{ $t("guide") }}
               </v-btn>
             </v-col>
             <v-col cols="12" class="py-1" md="12">
@@ -40,26 +40,9 @@
             <v-col cols="12" class="py-1" md="12">
               <LazyInputPassword name="password" :form="form" />
             </v-col>
-            <v-col cols="12">
-              <!-- <v-checkbox
-                class="checked"
-                :class="{ 'checked--active': enabled }"
-                v-model="enabled"
-              >
-                <template v-slot:label>
-                  <img
-                    class="checked__img"
-                    v-if="enabled"
-                    :src="require('@/assets/images/auth/checked.svg')"
-                    alt="checked"
-                  />
-                  <span>{{ $t("accept_terms") }}</span>
-                </template>
-              </v-checkbox> -->
-            </v-col>
+            <v-col cols="12"> </v-col>
 
             <v-btn
-              :disabled="!enabled"
               color="primary"
               class="white--text"
               type="submit"
@@ -104,7 +87,6 @@ export default {
   data: () => ({
     showPassword: false,
     loading: false,
-    enabled: false,
     form: {
       isClint: false,
       user_name: "",

@@ -2,7 +2,7 @@
   min-height: 100vh;
 
   &__right {
-    min-height: 110vh;
+    min-height: 100vh;
     background-size: 100% 120%;
     position: relative;
     overflow: hidden;
@@ -41,7 +41,7 @@
 
     &__go-home {
       max-width: 480px;
-      margin: 20px auto;
+      margin: 30px auto;
 
       p {
         color: #000 !important;
