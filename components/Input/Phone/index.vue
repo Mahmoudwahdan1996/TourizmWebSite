@@ -1,7 +1,7 @@
 <template>
   <div class="phone-component">
     <v-label for="phone">
-      <b class="secondary--text">{{ $t("fields.phone") }}</b>
+      <b>{{ $t("phone") }}</b>
     </v-label>
     <v-text-field
       :autofocus="focus"
@@ -77,7 +77,6 @@
   </div>
 </template>
 
-
 <script>
 import { mapGetters } from "vuex";
 
@@ -112,9 +111,7 @@ export default {
       selectedCountry: {},
     };
   },
-  fetch() {
-    this.fetchCountries();
-  },
+
   computed: {
     ...mapGetters({
       sharedCountries: "countries/getCountries",
@@ -155,13 +152,9 @@ export default {
       this.form.country_code = country.phone_code;
       this.selectedCountry = country;
     },
-    fetchCountries() {
-      this.$store.dispatch("countries/setCountries");
-    },
   },
 };
 </script>
-
 
 <style lang="scss">
 .phone-component {

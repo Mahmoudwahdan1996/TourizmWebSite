@@ -9,6 +9,10 @@
             </v-form>
           </form-wrapper>
         </v-col>
+        <v-col>
+          <v-icon>mdi-square-outline</v-icon>
+          <v-icon>mdi-checkbox-marked</v-icon>
+        </v-col>
       </v-row>
     </div>
   </main>

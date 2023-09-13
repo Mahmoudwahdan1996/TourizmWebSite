@@ -7,26 +7,7 @@
             <v-col cols="12" class="py-0 px-1">
               <LazyErrorAlert />
             </v-col>
-            <v-col cols="6" class="py-1 d-flex align-center justify-center">
-              <v-btn
-                elevation="2"
-                :outlined="!form.isClint"
-                color="primary"
-                @click="() => (form.isClint = true)"
-              >
-                {{ $t("user") }}
-              </v-btn>
-            </v-col>
-            <v-col cols="6" class="py-1 d-flex align-center justify-center">
-              <v-btn
-                elevation="2"
-                :outlined="form.isClint"
-                color="primary"
-                @click="() => (form.isClint = false)"
-              >
-                {{ $t("guide") }}
-              </v-btn>
-            </v-col>
+
             <v-col cols="12" class="py-1" md="12">
               <LazyInputText name="user_name" :form="form" />
             </v-col>
@@ -40,11 +21,48 @@
             <v-col cols="12" class="py-1" md="12">
               <LazyInputPassword name="password" :form="form" />
             </v-col>
-            <v-col cols="12"> </v-col>
+            <v-col cols="12" class="d-flex align-center justify-start">
+              <v-label>
+                <b>{{ $t("choose_type_account") }}</b>
+              </v-label>
+            </v-col>
+            <v-col cols="6" class="py-1 d-flex align-center justify-center">
+              <v-btn
+                block
+                elevation="2"
+                :outlined="!form.isClint"
+                color="primary"
+                @click="() => (form.isClint = true)"
+              >
+                <v-icon left>
+                  {{
+                    form.isClint ? "mdi-checkbox-marked" : "mdi-square-outline"
+                  }}
+                </v-icon>
+                {{ $t("user") }}
+              </v-btn>
+            </v-col>
+
+            <v-col cols="6" class="py-1 d-flex align-center justify-center">
+              <v-btn
+                block
+                elevation="2"
+                :outlined="form.isClint"
+                color="primary"
+                @click="() => (form.isClint = false)"
+              >
+                <v-icon left>
+                  {{
+                    form.isClint ? "mdi-square-outline" : "mdi-checkbox-marked"
+                  }}
+                </v-icon>
+                {{ $t("guide") }}
+              </v-btn>
+            </v-col>
 
             <v-btn
               color="primary"
-              class="white--text"
+              class="white--text mt-4"
               type="submit"
               :loading="loading"
               large

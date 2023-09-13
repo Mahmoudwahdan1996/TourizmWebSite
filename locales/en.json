@@ -19,18 +19,11 @@
     "validPhoneOrEmail": "Invalid Phone Or Email",
     "alpha": "must be only alphabet characters."
   },
-  "fields": {
-    "user_name": "User Name",
-    "name": "Name",
-    "phone": "Phone",
-    "email": " Email",
-    "subject": "Subject",
-    "message": "Message",
-    "topic": "Topic",
-    "password": "Password"
-  },
+
+  "phone": "Phone",
+  "user_name": "User Name",
   "hint_email": "Enter your email to continue",
-  "hint_username": "Enter your name",
+  "hint_user_name": "Enter your name",
   "hint_password": "Enter the password to continue",
   "hint_phone": "Enter your mobile number to continue",
   "please_signup": "Please enter your information to register a new account.",
@@ -47,5 +40,6 @@
   "forget_password": "Forget Password",
   "login": "Login",
   "no_have_account": "Don't have an account?",
-  "please_register": "Register a new account now"
+  "please_register": "Register a new account now",
+  "choose_type_account": "Choose Type Account"
 }
