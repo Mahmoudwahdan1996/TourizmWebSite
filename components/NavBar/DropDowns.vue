@@ -131,30 +131,10 @@ export default {
       this.$nuxt.refresh();
       this.$nextTick(() => {});
     },
-    onSelectCurrency(item) {
-      this.$store.dispatch("currencies/setSelectedCurrency", item);
-      window.location.reload();
-    },
 
     async handleLogout() {
       await this.$auth.logout();
       this.$router.push(this.localePath("/"));
-    },
-  },
-  watch: {
-    selectedCurrency: {
-      handler(value) {
-        if (value && value.id) {
-          this.form.currency = value;
-        } else {
-          this.form.currency =
-            this.sharedCurrencies &&
-            this.sharedCurrencies.find(
-              (country) => country.code === value.code
-            );
-        }
-      },
-      immediate: true,
     },
   },
 };

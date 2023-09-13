@@ -26,12 +26,7 @@ Vue.mixin({
     ...mapGetters({
       serverErrors: "errors/serverErrors",
       settings: "globalSettings/getSettings",
-      sharedCurrencies: "currencies/getCurrencies",
-      selectedCurrency: "currencies/getCurrency"
     }),
-    priceSign() {
-      return this.selectedCurrency && this.selectedCurrency.sign;
-    }
   },
   methods: {
     popUp() {
@@ -45,7 +40,7 @@ Vue.mixin({
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: this.$t("button.ok"),
-            cancelButtonText: this.$t("button.cancel")
+            cancelButtonText: this.$t("button.cancel"),
           })
           .then((result) => {
             if (!result.dismiss) {
@@ -57,8 +52,8 @@ Vue.mixin({
     },
     convertDate(date, format = "LL") {
       return this.$moment(date).locale(this.$i18n.locale).format(format);
-    }
-  }
+    },
+  },
 });
 
 Vue.prototype.$eventBus = new Vue();
@@ -66,6 +61,6 @@ Vue.prototype.$eventBus = new Vue();
 Vue.use(VueGoogleMaps, {
   load: {
     // key: 'YOUR_API_TOKEN',
-    libraries: "places"
-  }
+    libraries: "places",
+  },
 });

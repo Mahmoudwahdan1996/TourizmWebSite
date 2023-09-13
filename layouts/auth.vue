@@ -7,23 +7,17 @@
 <script>
 export default {
   name: "AuthLayout",
-  methods: {
-    setSelectedCurrency() {
-      if (this.sharedCurrencies) {
-        const currency = this.sharedCurrencies.find(
-          (country) => country.code === this.selectedCurrency.code
-        );
-        this.$store.dispatch("currencies/setSelectedCurrency", currency);
-      }
-    },
-    setCurrencies() {
-      this.$store.dispatch("currencies/setCurrencies").then(() => {
-        this.setSelectedCurrency();
-      });
-    },
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale,
+        dir: this.$i18n.locale === "en" ? "ltr" : "rtl",
+      },
+    };
   },
+
   watch: {
-    "$i8n.locale": {
+    "$i18n.locale": {
       handler(value) {
         if (value === "en") {
           this.$vuetify.rtl = false;
@@ -32,13 +26,6 @@ export default {
           this.$vuetify.rtl = true;
           this.isRight = true;
         }
-      },
-      immediate: true,
-    },
-    "$i18n.locale": {
-      handler() {
-        this.$store.dispatch("globalSettings/setSettings");
-        this.setCurrencies();
       },
       immediate: true,
     },

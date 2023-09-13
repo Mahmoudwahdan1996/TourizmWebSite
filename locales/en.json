@@ -17,7 +17,35 @@
     "validPhoneNumber": "The phone number not valid",
     "maxWords": "This field must be less than %{maxWords} ",
     "validPhoneOrEmail": "Invalid Phone Or Email",
-    "alpha":"must be only alphabet characters."
-  }
- 
+    "alpha": "must be only alphabet characters."
+  },
+  "fields": {
+    "user_name": "User Name",
+    "name": "Name",
+    "phone": "Phone",
+    "email": " Email",
+    "subject": "Subject",
+    "message": "Message",
+    "topic": "Topic",
+    "password": "Password"
+  },
+  "hint_email": "Enter your email to continue",
+  "hint_username": "Enter your name",
+  "hint_password": "Enter the password to continue",
+  "hint_phone": "Enter your mobile number to continue",
+  "please_signup": "Please enter your information to register a new account.",
+  "forgot_password": "Forgot password",
+  "back_home": "Go to the home page",
+  "welcome": "Welcome",
+  "please_login": "Login",
+  "have_account": "You already have an account",
+  "guaid": "Guaid",
+  "user": "User",
+  "enter_your_data": "Please enter your data to log in",
+  "email":" Email",
+  "password":"Password",
+  "forget_password": "Forget Password",
+  "login":"Login",
+  "no_have_account": "Don't have an account?",
+  "please_register": "Register a new account now"
 }
