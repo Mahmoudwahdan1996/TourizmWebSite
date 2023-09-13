@@ -30,13 +30,13 @@
               <v-btn
                 block
                 elevation="2"
-                :outlined="!form.isClint"
+                :outlined="!form.isClient"
                 color="primary"
-                @click="() => (form.isClint = true)"
+                @click="() => (form.isClient = true)"
               >
                 <v-icon left>
                   {{
-                    form.isClint ? "mdi-checkbox-marked" : "mdi-square-outline"
+                    form.isClient ? "mdi-checkbox-marked" : "mdi-square-outline"
                   }}
                 </v-icon>
                 {{ $t("user") }}
@@ -47,13 +47,13 @@
               <v-btn
                 block
                 elevation="2"
-                :outlined="form.isClint"
+                :outlined="form.isClient"
                 color="primary"
-                @click="() => (form.isClint = false)"
+                @click="() => (form.isClient = false)"
               >
                 <v-icon left>
                   {{
-                    form.isClint ? "mdi-square-outline" : "mdi-checkbox-marked"
+                    form.isClient ? "mdi-square-outline" : "mdi-checkbox-marked"
                   }}
                 </v-icon>
                 {{ $t("guide") }}
@@ -106,7 +106,7 @@ export default {
     showPassword: false,
     loading: false,
     form: {
-      isClint: false,
+      isClient: false,
       user_name: "",
       email: "",
       password: "",
