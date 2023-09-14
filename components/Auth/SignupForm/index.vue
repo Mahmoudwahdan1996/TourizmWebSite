@@ -16,7 +16,16 @@
               <LazyInputText name="email" :form="form" />
             </v-col>
             <v-col cols="12" class="py-1" md="12">
-              <LazyInputPhone name="phone" :form="form" />
+              <form-group name="phone" attribute="phone">
+                <template slot-scope="{ attrs, listeners }">
+                  <LazyInputPhone
+                    name="phone"
+                    :form="form"
+                    v-bind="attrs"
+                    v-on="listeners"
+                  />
+                </template>
+              </form-group>
             </v-col>
             <v-col cols="12" class="py-1" md="12">
               <LazyInputPassword name="password" :form="form" />
@@ -200,8 +209,8 @@ export default {
       },
       phone: {
         required,
-        minLengthNumber: minLength(9),
-        maxLengthNumber: maxLength(15),
+        minLength: minLength(9),
+        maxLength: maxLength(15),
       },
     },
   },

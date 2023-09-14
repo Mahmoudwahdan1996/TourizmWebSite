@@ -8,12 +8,12 @@
               <LazyErrorAlert />
             </v-col>
             <v-col cols="12">
-              <form-group name="phone" attribute="fields.phone">
+              <form-group name="phone" attribute="phone">
                 <template slot-scope="{ attrs, listeners }">
                   <LazyInputPhone
                     v-bind="attrs"
-                    :form="form"
                     v-on="listeners"
+                    :form="form"
                     name="phone"
                   />
                 </template>

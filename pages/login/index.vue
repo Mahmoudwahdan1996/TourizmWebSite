@@ -10,7 +10,7 @@
             />
             <LazyAuthLoginForm />
           </LazyAuthLeftSide>
-          <LazyAuthRightSide image="login.webp" />
+          <LazyAuthRightSide imgUrl="login.webp" />
         </v-row>
       </v-col>
     </v-row>

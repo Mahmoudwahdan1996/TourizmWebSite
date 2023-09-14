@@ -10,7 +10,7 @@
             />
             <LazyAuthForgetPasswordForm />
           </LazyAuthLeftSide>
-          <LazyAuthRightSide image="reset-password.webp" />
+          <LazyAuthRightSide imgUrl="reset-password.webp" />
         </v-row>
       </v-col>
     </v-row>

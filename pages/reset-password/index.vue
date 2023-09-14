@@ -7,7 +7,7 @@
             <LazyAuthLeftSideIntro :title="$t('forgot_password')" :description="$t('new_password_title')" />
             <LazyAuthNewPasswordForm />
           </LazyAuthLeftSide>
-          <LazyAuthRightSide image="reset-password.webp" />
+          <LazyAuthRightSide imgUrl="reset-password.webp" />
         </v-row>
       </v-col>
     </v-row>
