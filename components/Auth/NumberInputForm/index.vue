@@ -1,33 +1,40 @@
 <template>
-  <v-container fluid class="auth__verification-code">
+  <v-container class="auth__verification-code px-0">
     <v-row justify="center">
-      <v-col cols="12" sm="8" md="6">
-        <v-card class="d-flex flex-column aligne-center justify-center">
+      <v-col cols="12" sm="8" md="7">
+        <v-card
+          class="auth__verification-code__card d-flex flex-column aligne-center justify-center px-3"
+        >
           <v-card-title
-            class="text-h5"
+            class="auth__verification-code__card--title"
             style="display: block; text-align: center"
             >Enter Verification Code</v-card-title
           >
-          <v-card-text class="d-flex aligne-center justify-space-between">
-            <template v-for="(value, index) in inputs">
-              <v-text-field
-                class="auth__verification-code--input"
-                :key="index"
-                :value="value"
-                @input="handleInput(index, $event)"
-                @keydown.enter.prevent="focusNext(index)"
-                outlined
-                hide-details
-                :counter="1"
-              />
-            </template>
-          </v-card-text>
-          <v-btn
-            @click="verifyCode"
-            color="primary"
-            style="width: 50%; margin: 0 auto 1rem"
-            >Verify</v-btn
-          >
+          <v-row>
+            <v-col cols="12">
+              <v-card-text class="d-flex aligne-center justify-space-between">
+                <template v-for="(value, index) in inputs">
+                  <v-text-field
+                    class="auth__verification-code__card--input"
+                    :key="index"
+                    :value="value"
+                    @input="handleInput(index, $event)"
+                    @keydown.enter.prevent="focusNext(index)"
+                    outlined
+                    hide-details
+                    :counter="1"
+                  />
+                </template>
+              </v-card-text>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12" sm="8" offset-sm="2">
+              <v-btn @click="verifyCode" class="my-5 auth__btn" large block>
+                Verify
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>
@@ -38,7 +45,7 @@
 export default {
   data() {
     return {
-      inputs: ["", "", "", "", ""],
+      inputs: ["", "", "", "", "", ""],
     };
   },
   methods: {

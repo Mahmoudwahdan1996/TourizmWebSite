@@ -16,7 +16,7 @@
     </v-row>
   </main>
 </template>
-  
+
 <script>
 export default {
   name: "ForgetPassword",
@@ -24,4 +24,3 @@ export default {
   middleware: "isAuth",
 };
 </script>
-  

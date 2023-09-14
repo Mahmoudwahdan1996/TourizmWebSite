@@ -2,7 +2,7 @@
   <v-col cols="12" lg="6" class="hidden-md-and-down">
     <div
       class="auth__right"
-      :style="`background-image:url(${require(`@/assets/images/auth/${imgUrl}`)})`"
+      :style="`background-image:url(${require(`@/assets/images/auth/${imgUrl}`)}); height:100%`"
     >
       <img :src="require(`@/assets/images/auth/air.svg`)" alt="air" />
     </div>
