@@ -22,7 +22,7 @@
                     @keydown.enter.prevent="focusNext(index)"
                     outlined
                     hide-details
-                    :counter="1"
+                    maxlength="1"
                   />
                 </template>
               </v-card-text>
