@@ -17,21 +17,6 @@ export default {
       },
     };
   },
-  methods: {
-    setSelectedCurrency() {
-      if (this.sharedCurrencies) {
-        const currency = this.sharedCurrencies.find(
-          (country) => country.code === this.selectedCurrency.code
-        );
-        this.$store.dispatch("currencies/setSelectedCurrency", currency);
-      }
-    },
-    setCurrencies() {
-      this.$store.dispatch("currencies/setCurrencies").then(() => {
-        this.setSelectedCurrency();
-      });
-    },
-  },
 
   watch: {
     "$i8n.locale": {
@@ -49,7 +34,6 @@ export default {
     "$i18n.locale": {
       handler() {
         this.$store.dispatch("globalSettings/setSettings");
-        this.setCurrencies();
       },
       immediate: true,
     },

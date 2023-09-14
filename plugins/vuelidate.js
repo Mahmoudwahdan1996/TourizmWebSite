@@ -1,21 +1,21 @@
-import Vue from 'vue'
-import Vuelidate from 'vuelidate'
+import Vue from "vue";
+import Vuelidate from "vuelidate";
 
-import vuelidateErrorExtractor, { templates } from 'vuelidate-error-extractor'
+import vuelidateErrorExtractor, { templates } from "vuelidate-error-extractor";
 
-import FormGroup from '@/components/FormGroup'
+import FormGroup from "@/components/FormGroup";
 
-Vue.use(Vuelidate)
+Vue.use(Vuelidate);
 
 const messages = {
-  en: require('@/locales/en.json'),
-  ar: require('@/locales/ar.json')
-}
+  en: require("@/locales/en.json"),
+  ar: require("@/locales/ar.json"),
+};
 
 Vue.use(vuelidateErrorExtractor, {
   messages,
-  i18n: 'validation'
-})
+  i18n: "validation",
+});
 
-Vue.component('FormGroup', FormGroup)
-Vue.component('FormWrapper', templates.FormWrapper)
+Vue.component("FormGroup", FormGroup);
+Vue.component("FormWrapper", templates.FormWrapper);
