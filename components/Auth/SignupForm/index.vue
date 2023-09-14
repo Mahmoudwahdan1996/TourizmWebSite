@@ -70,8 +70,7 @@
             </v-col>
 
             <v-btn
-              color="primary"
-              class="white--text mt-4"
+              class="auth__btn mt-4"
               type="submit"
               :loading="loading"
               large

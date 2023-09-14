@@ -20,9 +20,9 @@
                     :value="value"
                     @input="handleInput(index, $event)"
                     @keydown.enter.prevent="focusNext(index)"
-                    outlined
                     hide-details
-                    :counter="1"
+                    outlined
+                    maxlength="1"
                   />
                 </template>
               </v-card-text>
