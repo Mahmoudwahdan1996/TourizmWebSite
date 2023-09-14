@@ -12,8 +12,8 @@
                 <template slot-scope="{ attrs, listeners }">
                   <LazyInputPhone
                     v-bind="attrs"
-                    :form="form"
                     v-on="listeners"
+                    :form="form"
                     name="phone"
                   />
                 </template>
