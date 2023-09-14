@@ -20,8 +20,8 @@
                     :value="value"
                     @input="handleInput(index, $event)"
                     @keydown.enter.prevent="focusNext(index)"
-                    outlined
                     hide-details
+                    outlined
                     maxlength="1"
                   />
                 </template>
