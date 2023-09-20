@@ -1,15 +1,18 @@
 <template>
   <main>
     <div class="mt-10">
-      <v-row>
-        <v-col cols="12" md="6">
-          <form-wrapper :validator="$v.form">
-            <v-form @submit.prevent="handleSubmit">
-              <InputPassword :form="form" name="password" />
-            </v-form>
-          </form-wrapper>
-        </v-col>
-      </v-row>
+      <div class="grey lighten-5">
+        <v-container class="events">
+          <v-row>
+            <HomeEventCard />
+            <HomeEventCard />
+            <HomeEventCard />
+            <HomeEventCard />
+            <HomeEventCard />
+            <HomeEventCard />
+          </v-row>
+        </v-container>
+      </div>
     </div>
   </main>
 </template>
