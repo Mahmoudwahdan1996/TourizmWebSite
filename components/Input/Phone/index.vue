@@ -1,20 +1,20 @@
 <template>
   <div class="phone-component">
     <v-label for="phone">
-      <b class="secondary--text">{{ $t("fields.phone") }}</b>
+      <b>{{ $t("phone") }}</b>
     </v-label>
     <v-text-field
       :autofocus="focus"
       :hint="$t(`hint_${name}`)"
       persistent-hint
       class="mt-1"
-      v-bind="attrs"
+      v-bind="$attrs"
       :id="name"
       v-model="form[name]"
       rounded
       filled
       flat
-      v-on="listeners"
+      v-on="$listeners"
       type="number"
     >
       <template #append>
@@ -77,21 +77,20 @@
   </div>
 </template>
 
-
 <script>
 import { mapGetters } from "vuex";
 
 export default {
   name: "InputTypePhone",
   props: {
-    attrs: {
-      type: Object,
-      default: () => ({}),
-    },
-    listeners: {
-      type: Object,
-      default: () => ({}),
-    },
+    // attrs: {
+    //   type: Object,
+    //   default: () => ({}),
+    // },
+    // listeners: {
+    //   type: Object,
+    //   default: () => ({}),
+    // },
     form: {
       type: Object,
       default: () => {},
@@ -112,9 +111,7 @@ export default {
       selectedCountry: {},
     };
   },
-  fetch() {
-    this.fetchCountries();
-  },
+
   computed: {
     ...mapGetters({
       sharedCountries: "countries/getCountries",
@@ -155,13 +152,9 @@ export default {
       this.form.country_code = country.phone_code;
       this.selectedCountry = country;
     },
-    fetchCountries() {
-      this.$store.dispatch("countries/setCountries");
-    },
   },
 };
 </script>
-
 
 <style lang="scss">
 .phone-component {

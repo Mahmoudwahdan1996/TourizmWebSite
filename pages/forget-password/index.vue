@@ -1,16 +1,16 @@
 <template>
-  <main class="auth auth--signup">
+  <main class="auth auth--reset-password">
     <v-row no-gutters>
       <v-col cols="12" md="12">
         <v-row no-gutters class="fill-height">
           <LazyAuthLeftSide>
             <LazyAuthLeftSideIntro
-              :title="$t('welcome')"
-              :description="$t('please_signup')"
+              :title="$t('forgot_password')"
+              :description="$t('please_enter_phone')"
             />
-            <LazyAuthSignupForm />
+            <LazyAuthForgetPasswordForm />
           </LazyAuthLeftSide>
-          <LazyAuthRightSide imgUrl="signup.webp" />
+          <LazyAuthRightSide imgUrl="reset-password.webp" />
         </v-row>
       </v-col>
     </v-row>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "Signup",
+  name: "ForgetPassword",
   layout: "auth",
   middleware: "isAuth",
 };

@@ -2,7 +2,7 @@
   min-height: 100vh;
 
   &__right {
-    min-height: 110vh;
+    min-height: 100vh;
     background-size: 100% 120%;
     position: relative;
     overflow: hidden;
@@ -41,7 +41,7 @@
 
     &__go-home {
       max-width: 480px;
-      margin: 20px auto;
+      margin: 30px auto;
 
       p {
         color: #000 !important;
@@ -87,7 +87,6 @@
       padding: 125px 0 30px 0 !important;
     }
   }
-
   .arrow {
     @include langLtr {
       transform: rotate(179deg);
@@ -105,6 +104,51 @@
       margin: 0px -12px;
       position: relative;
       left: 20px;
+    }
+  }
+  &__btn {
+    box-shadow: 0 0 20px rgba(84, 161, 93, 0.2);
+    transition: all 0.3s;
+    color: var(--primary) !important;
+    border: 1px solid var(--primary);
+    background-color: rgba(255, 255, 255, 1) !important;
+    &:hover {
+      background-color: var(--primary) !important;
+      color: #fff !important;
+      box-shadow: 0 0 20px rgba(84, 161, 93, 0.6);
+    }
+  }
+
+  &__verification-code {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__card {
+      padding: 50px 0;
+      &--title {
+        margin: 2rem 0;
+        font-size: 1.5rem !important;
+        @include mobile {
+          font-size: 20px !important;
+        }
+      }
+      &--input {
+        .v-input__control {
+          margin: 0 1rem;
+          @include mobile {
+            margin: 0 0.3rem;
+          }
+          input {
+            text-align: center;
+            font-size: 1.5rem;
+            @include mobile {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
     }
   }
 }

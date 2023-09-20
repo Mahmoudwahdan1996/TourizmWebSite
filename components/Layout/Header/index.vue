@@ -1,15 +1,34 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" style="z-index: 999999999" :right="isRight"
-      :clipped="$vuetify.breakpoint.lgAndUp" app :disable-resize-watcher="true">
+    <v-navigation-drawer
+      v-model="drawer"
+      style="z-index: 999999999"
+      :right="isRight"
+      :clipped="$vuetify.breakpoint.lgAndUp"
+      app
+      :disable-resize-watcher="true"
+    >
       <v-list class="text-center pa-0">
-        <v-list-item class="px-2 mb-5 py-2" :to="localePath('/')" style="background-color: #ffeee6 ">
-          <v-img contain :src="require('@/assets/images/logo-new.svg')" alt="OTAS logo" />
+        <v-list-item
+          class="px-2 mb-5 py-2"
+          :to="localePath('/')"
+          style="background-color: #ffeee6"
+        >
+          <v-img
+            contain
+            :src="require('@/assets/images/logo-new.svg')"
+            alt="OTAS logo"
+          />
         </v-list-item>
       </v-list>
       <v-list flat color="transparent" class="app-header__list">
-        <v-list-item v-for="(item, index) in mobItems" :key="index" class="px-0 justify-center d-flex" dense
-          :to="localePath(item.to)">
+        <v-list-item
+          v-for="(item, index) in mobItems"
+          :key="index"
+          class="px-0 justify-center d-flex"
+          dense
+          :to="localePath(item.to)"
+        >
           {{ item.title }}
         </v-list-item>
 
@@ -17,19 +36,35 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar class="white" elevation="0" :clipped-left="clipped" fixed app
-      style="z-index: 16; width: 100%; left: 0; right: 0">
+    <v-app-bar
+      class="white"
+      elevation="0"
+      :clipped-left="clipped"
+      fixed
+      app
+      style="z-index: 16; width: 100%; left: 0; right: 0"
+    >
       <v-container class="pa-0">
         <LazyNavBar :items="items" class="hidden-sm-and-down" />
-        <v-app-bar-nav-icon class="hidden-md-and-up" small @click.stop="drawer = !drawer" />
-
-
+        <v-app-bar-nav-icon
+          class="hidden-md-and-up"
+          small
+          @click.stop="drawer = !drawer"
+        />
       </v-container>
-      <nuxt-link exact :to="localePath('/')" class="logo d-flex align-center hidden-md-and-up">
-        <img data-wow-duration="2s" :src="require('@/assets/images/logo-new.svg')" height="35px" alt="OTAS logo"
-          class="move-logo-reverse hidden-md-and-up wow fadeInLeft" />
+      <nuxt-link
+        exact
+        :to="localePath('/')"
+        class="logo d-flex align-center hidden-md-and-up"
+      >
+        <img
+          data-wow-duration="2s"
+          :src="require('@/assets/images/logo-new.svg')"
+          height="35px"
+          alt="OTAS logo"
+          class="move-logo-reverse hidden-md-and-up wow fadeInLeft"
+        />
       </nuxt-link>
-
     </v-app-bar>
   </div>
 </template>
@@ -111,8 +146,8 @@ export default {
           title: this.$t("contact_us"),
           to: "/contact-us",
         },
-      ]
-    }
+      ];
+    },
   },
 
   watch: {

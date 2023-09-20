@@ -17,20 +17,15 @@
     "validPhoneNumber": "The phone number not valid",
     "maxWords": "This field must be less than %{maxWords} ",
     "validPhoneOrEmail": "Invalid Phone Or Email",
-    "alpha": "must be only alphabet characters."
+    "alpha": "must be only alphabet characters.",
+    "strongPassword": "this field It must contain at least a lowercase letter, an uppercase letter, and a symbol",
+    "sameAsPassword": "please make sure password confirmation is Correct"
   },
-  "fields": {
-    "user_name": "User Name",
-    "name": "Name",
-    "phone": "Phone",
-    "email": " Email",
-    "subject": "Subject",
-    "message": "Message",
-    "topic": "Topic",
-    "password": "Password"
-  },
+
+  "phone": "Phone",
+  "user_name": "User Name",
   "hint_email": "Enter your email to continue",
-  "hint_username": "Enter your name",
+  "hint_user_name": "Enter your name",
   "hint_password": "Enter the password to continue",
   "hint_phone": "Enter your mobile number to continue",
   "please_signup": "Please enter your information to register a new account.",
@@ -39,6 +34,19 @@
   "welcome": "Welcome",
   "please_login": "Login",
   "have_account": "You already have an account",
-  "guaid": "Guaid",
-  "user": "User"
+  "guide": "Guide",
+  "user": "User",
+  "enter_your_data": "Please enter your data to log in",
+  "email": " Email",
+  "password": "Password",
+  "forget_password": "Forget Password",
+  "login": "Login",
+  "no_have_account": "Don't have an account?",
+  "please_register": "Register a new account now",
+  "choose_type_account": "Choose Type Account",
+  "please_enter_phone": "Please enter phone number",
+  "new_password_title": "Please enter your new password now",
+  "password_confirmation": "Re-enter the new password",
+  "hint_password_confirmation": "Re-enter the new password to continue the change.",
+  "reset_now": "ٌReset Password Now"
 }

@@ -7,26 +7,7 @@
             <v-col cols="12" class="py-0 px-1">
               <LazyErrorAlert />
             </v-col>
-            <v-col cols="6" class="py-1 d-flex align-center justify-center">
-              <v-btn
-                elevation="2"
-                :outlined="!form.isClint"
-                color="primary"
-                @click="() => (this.form.isClint = true)"
-              >
-                {{ $t("user") }}
-              </v-btn>
-            </v-col>
-            <v-col cols="6" class="py-1 d-flex align-center justify-center">
-              <v-btn
-                elevation="2"
-                :outlined="form.isClint"
-                color="primary"
-                @click="() => (this.form.isClint = false)"
-              >
-                {{ $t("guaid") }}
-              </v-btn>
-            </v-col>
+
             <v-col cols="12" class="py-1" md="12">
               <LazyInputText name="user_name" :form="form" />
             </v-col>
@@ -35,33 +16,61 @@
               <LazyInputText name="email" :form="form" />
             </v-col>
             <v-col cols="12" class="py-1" md="12">
-              <LazyInputPhone name="phone" :form="form" />
+              <form-group name="phone" attribute="phone">
+                <template slot-scope="{ attrs, listeners }">
+                  <LazyInputPhone
+                    name="phone"
+                    :form="form"
+                    v-bind="attrs"
+                    v-on="listeners"
+                  />
+                </template>
+              </form-group>
             </v-col>
             <v-col cols="12" class="py-1" md="12">
               <LazyInputPassword name="password" :form="form" />
             </v-col>
-            <v-col cols="12">
-              <!-- <v-checkbox
-                class="checked"
-                :class="{ 'checked--active': enabled }"
-                v-model="enabled"
+            <v-col cols="12" class="d-flex align-center justify-start">
+              <v-label>
+                <b>{{ $t("choose_type_account") }}</b>
+              </v-label>
+            </v-col>
+            <v-col cols="6" class="py-1 d-flex align-center justify-center">
+              <v-btn
+                block
+                elevation="2"
+                :outlined="!form.isClient"
+                color="primary"
+                @click="() => (form.isClient = true)"
               >
-                <template v-slot:label>
-                  <img
-                    class="checked__img"
-                    v-if="enabled"
-                    :src="require('@/assets/images/auth/checked.svg')"
-                    alt="checked"
-                  />
-                  <span>{{ $t("accept_terms") }}</span>
-                </template>
-              </v-checkbox> -->
+                <v-icon left>
+                  {{
+                    form.isClient ? "mdi-checkbox-marked" : "mdi-square-outline"
+                  }}
+                </v-icon>
+                {{ $t("user") }}
+              </v-btn>
+            </v-col>
+
+            <v-col cols="6" class="py-1 d-flex align-center justify-center">
+              <v-btn
+                block
+                elevation="2"
+                :outlined="form.isClient"
+                color="primary"
+                @click="() => (form.isClient = false)"
+              >
+                <v-icon left>
+                  {{
+                    form.isClient ? "mdi-square-outline" : "mdi-checkbox-marked"
+                  }}
+                </v-icon>
+                {{ $t("guide") }}
+              </v-btn>
             </v-col>
 
             <v-btn
-              :disabled="!enabled"
-              color="primary"
-              class="white--text"
+              class="auth__btn mt-4"
               type="submit"
               :loading="loading"
               large
@@ -104,9 +113,8 @@ export default {
   data: () => ({
     showPassword: false,
     loading: false,
-    enabled: false,
     form: {
-      isClint: false,
+      isClient: false,
       user_name: "",
       email: "",
       password: "",
@@ -200,8 +208,8 @@ export default {
       },
       phone: {
         required,
-        minLengthNumber: minLength(9),
-        maxLengthNumber: maxLength(15),
+        minLength: minLength(9),
+        maxLength: maxLength(15),
       },
     },
   },

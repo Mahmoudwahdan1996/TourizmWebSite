@@ -8,6 +8,7 @@ import ArabicIcon from '@/assets/icons/arabicIcon'
 import EnglishIcon from '@/assets/icons/englishIcon'
 Vue.use(Vuetify)
 
+
 export default new Vuetify({
   rtl: true,
   icons: {
