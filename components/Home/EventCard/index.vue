@@ -54,10 +54,9 @@
 
         <v-card-actions>
           <v-btn
-            x-large
+            large
             @click="reserve"
             :outlined="hover ? false : true"
-            rounded
             color="primary"
           >
             Book Now
