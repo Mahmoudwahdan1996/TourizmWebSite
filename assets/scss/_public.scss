@@ -200,3 +200,17 @@ pre {
   white-space: normal !important;
   overflow-wrap: break-word;
 }
+
+
+
+.v-toolbar__content{
+  padding: 4px 0 !important;
+}
+
+
+
+.v-btn{
+  &::before{
+    background-color: transparent !important;
+  }
+}

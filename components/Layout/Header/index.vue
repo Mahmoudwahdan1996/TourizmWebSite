@@ -44,14 +44,14 @@
       app
       style="z-index: 16; width: 100%; left: 0; right: 0"
     >
-      <v-container class="pa-0">
+      <!-- <v-container class="pa-0"> -->
         <LazyNavBar :items="items" class="hidden-sm-and-down" />
         <v-app-bar-nav-icon
           class="hidden-md-and-up"
           small
           @click.stop="drawer = !drawer"
         />
-      </v-container>
+      <!-- </v-container> -->
       <nuxt-link
         exact
         :to="localePath('/')"
@@ -111,17 +111,18 @@ export default {
     items() {
       return [
         {
-          title: this.$t("routes.home"),
+          title: this.$t("home"),
           to: "/",
         },
         {
-          title: this.$t("about_otas"),
+          title: this.$t("about_us"),
           to: "/about-us",
         },
-        // {
-        //   title: this.$t("routes.pricing"),
-        //   to: "/pricing",
-        // },
+        {
+          title: this.$t("events"),
+          to: "/events",
+        },
+
       ];
     },
     mobItems() {
