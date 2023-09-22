@@ -1,19 +1,19 @@
 <template>
-  <v-list class="flat" style="background-color: transparent">
+  <v-list class="flat header-links" style="background-color: transparent">
     <v-list-item class="justify-center px-0">
       <v-menu rounded offset-y transition="slide-x-transition">
         <template #activator="{ attrs, on }">
-          <v-btn width="100" text v-bind="attrs" v-on="on" class="mb-5 mb-md-0">
+          <v-btn width="100" text v-bind="attrs" v-on="on" class="mb-5 mb-md-0  white--text">
             <span
-              class="font-weight-bold white--text"
+              class="font-weight-bold"
               v-text="currentLocale.code"
             >
             </span>
-            <v-icon right color="white">mdi-earth</v-icon>
+            <v-icon right >mdi-earth</v-icon>
           </v-btn>
         </template>
 
-        <v-list class="pa-0 header-list">
+        <v-list class="pa-0 header-links__list">
           <v-list-item
             v-for="(locale, index) in $i18n.locales"
             :key="index"
@@ -47,11 +47,11 @@
             <span>
               {{ accountBtn }}
             </span>
-            <v-icon right color="white">mdi-account-circle-outline</v-icon>
+            <v-icon right >mdi-account-circle-outline</v-icon>
           </v-btn>
         </template>
 
-        <v-list class="py-0 header-list">
+        <v-list class="py-0 header-links__list">
           <v-list-item
             v-if="$auth.loggedIn"
             :to="localePath('/profile')"

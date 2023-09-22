@@ -2,6 +2,9 @@
 background-color: rgba(25, 26, 28, 0.6) !important;
 color: #fff;
 
+
+&-links{
+  
 &-list{
   background-color: rgba(25, 26, 28, 0.6) !important;
   .v-list-item{
@@ -12,7 +15,12 @@ color: #fff;
     }
   }
 }
-
+  .v-list-item{
+    &:hover .v-btn{
+      color: var(--primary) !important;
+    }
+  }
+}
 
 .v-btn--exact-active {
   color: var(--primary) !important;
@@ -23,4 +31,17 @@ color: #fff;
   }
 
 }
+}
+
+// change header when scrolling
+header.v-app-bar--is-scrolled.v-sheet.theme--light {
+  background-color: rgba(25, 26, 28, 0.9) !important;
+  transition: all .5s;
+  .v-toolbar__content {
+    transition: all .5s;
+    .move-logo {
+      padding: 3px;
+    }
+
+  }
 }

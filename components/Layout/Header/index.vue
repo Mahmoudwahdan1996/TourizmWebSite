@@ -37,20 +37,21 @@
     </v-navigation-drawer>
 
     <v-app-bar
-      class="white"
+      class="header"
       elevation="0"
       :clipped-left="clipped"
       fixed
       app
+      v-onScroll
       style="z-index: 16; width: 100%; left: 0; right: 0"
     >
       <!-- <v-container class="pa-0"> -->
-        <LazyNavBar :items="items" class="hidden-sm-and-down" />
-        <v-app-bar-nav-icon
-          class="hidden-md-and-up"
-          small
-          @click.stop="drawer = !drawer"
-        />
+      <LazyNavBar :items="items" class="hidden-sm-and-down" />
+      <v-app-bar-nav-icon
+        class="hidden-md-and-up"
+        small
+        @click.stop="drawer = !drawer"
+      />
       <!-- </v-container> -->
       <nuxt-link
         exact
@@ -122,7 +123,6 @@ export default {
           title: this.$t("events"),
           to: "/events",
         },
-
       ];
     },
     mobItems() {

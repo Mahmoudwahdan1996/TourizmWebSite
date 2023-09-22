@@ -1,6 +1,6 @@
 <template>
   <!-- <section> -->
-  <v-toolbar flat class="header fix-header px-4 justify-center">
+  <v-toolbar flat class="transparent fix-header px-4 justify-center">
     <!-- logo -->
     <v-list flat color="transparent" class="d-sm-flex">
       <v-list-item dense class="px-0">
@@ -26,7 +26,7 @@
     <v-list
       flat
       color="transparent"
-      class="d-adjust d-sm-flex justify-space-around"
+      class="d-adjust d-sm-flex justify-space-around header-links"
     >
       <v-list-item
         v-for="(item, index) in items"
@@ -48,13 +48,13 @@
       <v-list-item class="px-0">
         <v-menu transition="slide-x-transition" rounded offset-y>
           <template #activator="{ attrs, on }">
-            <v-btn text v-bind="attrs" v-on="on">
-              <span class="white--text font-bold"> {{ $t("more") }}</span>
+            <v-btn text v-bind="attrs" v-on="on" class="white--text">
+              <span class="font-bold"> {{ $t("more") }}</span>
               <v-icon right color="primary">mdi-plus</v-icon>
             </v-btn>
           </template>
 
-          <v-list class="header-list">
+          <v-list class="header-links__list">
             <v-list-item
               v-for="(item, index) in moreItems"
               :key="index"
