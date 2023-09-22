@@ -1,15 +1,10 @@
 <template>
   <main>
-    <div class="mt-10">
+    <div class="">
       <v-row>
-        <v-col cols="12" md="6">
-          <form-wrapper :validator="$v.form">
-            <v-form @submit.prevent="handleSubmit">
-              <InputPassword :form="form" name="password" />
-            </v-form>
-          </form-wrapper>
-        </v-col>
-        <v-col> </v-col>
+      <video autoplay loop="loop" muted preload="auto" style="width:100%" >
+        <source :src="require('@/assets/videos/hero.mp4')" type="video/mp4"></source>
+      </video>
       </v-row>
     </div>
   </main>
