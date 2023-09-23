@@ -26,7 +26,7 @@
     <v-list
       flat
       color="transparent"
-      class="d-adjust d-sm-flex justify-space-around header-links"
+      class="d-adjust d-sm-flex justify-space-around header-list"
     >
       <v-list-item
         v-for="(item, index) in items"
@@ -54,7 +54,7 @@
             </v-btn>
           </template>
 
-          <v-list class="header-links__list">
+          <v-list class="header-list__links">
             <v-list-item
               v-for="(item, index) in moreItems"
               :key="index"
