@@ -68,6 +68,6 @@ export default {
       immediate: true,
     },
   },
-  computed: {},
+
 };
 </script>

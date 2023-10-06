@@ -1,20 +1,22 @@
 <template>
-  <v-list class="flat" style="background-color: transparent">
+  <v-list class="flat header-list" style="background-color: transparent">
     <v-list-item class="justify-center px-0">
       <v-menu rounded offset-y transition="slide-x-transition">
         <template #activator="{ attrs, on }">
-          <v-btn width="100" text v-bind="attrs" v-on="on" class="mb-5 mb-md-0">
-            <span class="font-weight-bold" v-text="currentLocale.code"> </span>
-            <v-img
-              :src="require('@/assets/images/globe-lang.svg')"
-              contain
-              width="32"
-              height="32"
-            />
+          <v-btn
+            width="100"
+            text
+            v-bind="attrs"
+            v-on="on"
+            class="mb-5 mb-md-0"
+            :class="isDesktop ? 'white--text' : ''"
+          >
+            <span v-text="currentLocale.code"> </span>
+            <v-icon right>mdi-earth</v-icon>
           </v-btn>
         </template>
 
-        <v-list class="pa-0">
+        <v-list class="pa-0 header-list__links">
           <v-list-item
             v-for="(locale, index) in $i18n.locales"
             :key="index"
@@ -36,23 +38,24 @@
       </v-menu>
     </v-list-item>
 
-    <!-- <v-list-item class="justify-center px-0">
+    <v-list-item class="justify-center px-0">
       <v-menu bottom right offset-y transition="slide-x-transition">
         <template #activator="{ on, attrs }">
           <v-btn
-            class="rounded-pill px-7 py-5 text-capitalize"
-            color="primary"
-            outlined
+            class="px-7 py-5 text-capitalize transparent"
+            :class="isDesktop ? 'white--text' : ''"
             elevation="0"
             v-bind="attrs"
             v-on="on"
           >
-            {{ $t("routes.signin") }}
+            <span>
+              {{ accountBtn }}
+            </span>
+            <v-icon right>mdi-account-circle-outline</v-icon>
           </v-btn>
         </template>
 
-        <v-list class="py-0 profile-list">
-     
+        <v-list class="py-0 header-list__links">
           <v-list-item
             v-if="$auth.loggedIn"
             :to="localePath('/profile')"
@@ -60,7 +63,7 @@
           >
             <v-list-item-title class="d-flex justify-space-between">
               <small>
-                <span class="px-3">{{ $t("routes.my_profile") }} </span>
+                <span class="px-3">{{ $t("my_profile") }} </span>
               </small>
             </v-list-item-title>
           </v-list-item>
@@ -72,33 +75,39 @@
           >
             <v-list-item-title class="d-flex justify-space-between">
               <small>
-                <span class="px-3">{{ $t("buttons.logout") }} </span></small
+                <span class="px-3">{{ $t("logout") }} </span></small
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="!$auth.loggedIn" :to="localePath('/login')">
             <v-list-item-title class="d-flex justify-space-between">
               <small>
-                <span class="px-3">{{ $t("buttons.login") }} </span></small
+                <span class="px-3">{{ $t("login") }} </span></small
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="!$auth.loggedIn" :to="localePath('/signup')">
             <v-list-item-title class="d-flex justify-space-between">
               <small>
-                <span class="px-3">{{ $t("buttons.register") }} </span></small
+                <span class="px-3">{{ $t("signup") }} </span></small
               >
             </v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
-    </v-list-item> -->
+    </v-list-item>
   </v-list>
 </template>
 
 <script>
 export default {
   name: "DropDowns",
+  props: {
+    isDesktop: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
       form: { currency: { id: "" } },
@@ -122,6 +131,9 @@ export default {
     },
     currentLocale() {
       return this.$i18n.locales.find((el) => el.code === this.$i18n.locale);
+    },
+    accountBtn() {
+      return this.$auth.loggedIn ? this.$t("my_profile") : this.$t("login");
     },
   },
 

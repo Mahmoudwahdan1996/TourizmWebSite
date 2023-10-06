@@ -32,26 +32,30 @@
           {{ item.title }}
         </v-list-item>
 
-        <LazyNavBarDropDowns />
+        <LazyNavBarDropDowns :isDesktop="false" />
       </v-list>
     </v-navigation-drawer>
 
     <v-app-bar
-      class="white"
+      class="header px-3"
       elevation="0"
       :clipped-left="clipped"
       fixed
       app
+      v-onScroll
       style="z-index: 16; width: 100%; left: 0; right: 0"
     >
-      <v-container class="pa-0">
+      <!-- <v-container class="pa-0"> -->
+      <div class="w-100">
         <LazyNavBar :items="items" class="hidden-sm-and-down" />
         <v-app-bar-nav-icon
           class="hidden-md-and-up"
           small
           @click.stop="drawer = !drawer"
+          color="white"
         />
-      </v-container>
+      </div>
+      <!-- </v-container> -->
       <nuxt-link
         exact
         :to="localePath('/')"
@@ -111,32 +115,36 @@ export default {
     items() {
       return [
         {
-          title: this.$t("routes.home"),
+          title: this.$t("home"),
           to: "/",
         },
         {
-          title: this.$t("about_otas"),
+          title: this.$t("about_us"),
           to: "/about-us",
         },
-        // {
-        //   title: this.$t("routes.pricing"),
-        //   to: "/pricing",
-        // },
+        {
+          title: this.$t("events"),
+          to: "/events",
+        },
       ];
     },
     mobItems() {
       return [
         {
-          title: this.$t("routes.home"),
+          title: this.$t("home"),
           to: "/",
         },
         {
-          title: this.$t("about_otas"),
+          title: this.$t("about_us"),
           to: "/about-us",
         },
         {
-          title: this.$t("terms_conditions"),
-          to: "/terms-conditions",
+          title: this.$t("events"),
+          to: "/events",
+        },
+        {
+          title: this.$t("my_profile"),
+          to: "/profile",
         },
         {
           title: this.$t("privacy"),
@@ -171,3 +179,15 @@ export default {
   },
 };
 </script>
+
+
+
+<style lang="scss" scoped>
+.app-header__list {
+  .v-list-item {
+    &:hover {
+      color: var(--primary) !important;
+    }
+  }
+}
+</style>

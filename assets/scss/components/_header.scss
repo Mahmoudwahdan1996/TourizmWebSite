@@ -1,0 +1,47 @@
+.header{
+background-color: rgba(25, 26, 28, 0.6) !important;
+color: #fff;
+
+
+&-list{
+  
+&__links{
+  background-color: rgba(25, 26, 28, 0.6) !important;
+  .v-list-item{
+    color: #fff !important;
+    &:hover{
+      background-color: var(--primary) !important;
+      // color: var(--light-secondary) !important;
+    }
+  }
+}
+  .v-list-item{
+    &:hover .v-btn{
+      color: var(--primary) !important;
+    }
+  }
+}
+
+.v-btn--exact-active {
+  color: var(--primary) !important;
+  border-radius: 0;
+
+  &::before {
+    display: none;
+  }
+
+}
+}
+
+// change header when scrolling
+header.v-app-bar--is-scrolled.v-sheet.theme--light {
+  background-color: rgba(25, 26, 28, 0.9) !important;
+  transition: all .5s;
+  .v-toolbar__content {
+    transition: all .5s;
+    .move-logo {
+      padding: 3px;
+    }
+
+  }
+}

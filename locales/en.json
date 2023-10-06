@@ -48,5 +48,15 @@
   "new_password_title": "Please enter your new password now",
   "password_confirmation": "Re-enter the new password",
   "hint_password_confirmation": "Re-enter the new password to continue the change.",
-  "reset_now": "ٌReset Password Now"
+  "reset_now": "ٌReset Password Now",
+  "home":"Home",
+  "about_us":"About us  ",
+  "events":"Events",
+  "more":"More",
+  "signup":"Register",
+  "my_profile":"my account",
+  "logout":"logout",
+  "ar":"arabic",
+  "en":"english",
+  "explore_now":"Explore Now"
 }
