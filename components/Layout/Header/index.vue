@@ -180,8 +180,6 @@ export default {
 };
 </script>
 
-
-
 <style lang="scss" scoped>
 .app-header__list {
   .v-list-item {
