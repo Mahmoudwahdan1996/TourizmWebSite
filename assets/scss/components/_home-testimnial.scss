@@ -1,0 +1,45 @@
+.home-testi {
+  background-image: url(https://www.turio-wp.egenslab.com/wp-content/uploads/2022/11/Testimonial-Image-1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  z-index: -1;
+  &--overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    .container {
+      padding: 5rem 0;
+    }
+  }
+  //   &::before {
+  //     content: "";
+  //     display: block;
+  //   }
+
+  &--card {
+    background: #00152b;
+    border-radius: 5px;
+    max-width: 790px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--primary);
+      z-index: 2;
+      transition: 0.45s ease-out 0s;
+      transition-delay: 0.35s;
+    }
+  }
+}

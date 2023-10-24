@@ -52,7 +52,7 @@ input[type="number"] {
 
 @media (min-width: 1264px) {
   .container {
-    max-width: 1130px !important;
+    max-width: 1230px !important;
   }
 }
 
@@ -205,4 +205,15 @@ pre {
 
 .w-100 {
   width: 100%;
+}
+
+.select {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: #fff !important;
+    color: var(--primary) !important;
+  }
 }
