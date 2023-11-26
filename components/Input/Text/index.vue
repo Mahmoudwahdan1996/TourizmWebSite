@@ -1,7 +1,7 @@
 <template>
   <form-group :name="name" :attribute="name">
     <template slot-scope="{ attrs, listeners }">
-      <v-label :for="name">
+      <v-label :for="name" v-if="showLabel">
         <strong class="font-weight-dark">
           {{ label ? $t(label) : $t(name) }}</strong
         >
@@ -9,6 +9,8 @@
       <v-text-field
         :autofocus="focus"
         :hint="$t(`hint_${name}`)"
+        :placeholder="placeholder"
+        :class="dynamicClass"
         persistent-hint
         v-bind="attrs"
         :id="name"
@@ -18,6 +20,7 @@
         rounded
         flat
         v-on="listeners"
+        :prepend-inner-icon="prependInnerIcon"
       >
       </v-text-field>
     </template>
@@ -43,6 +46,23 @@ export default {
     label: {
       type: String,
       default: () => null,
+    },
+    showLabel: {
+      type: Boolean,
+      default: () => true,
+    },
+    prependInnerIcon: {
+      type: String,
+      default: () => "",
+    },
+
+    placeholder: {
+      type: String,
+      default: () => "",
+    },
+    dynamicClass: {
+      type: String,
+      default: () => "",
     },
   },
 };

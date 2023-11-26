@@ -13,9 +13,9 @@
             <img
               class="wow fadeInRight move-logo"
               data-wow-duration="2s"
-              :src="require('@/assets/images/logo-new.svg')"
+              src="https://turio-wp.b-cdn.net/wp-content/uploads/2022/10/logo2-1.svg"
               height="40px"
-              alt="OTAS logo"
+              alt="haicking logo"
             />
           </nuxt-link>
         </v-list-item-action>
@@ -66,6 +66,9 @@
             </v-list-item>
           </v-list>
         </v-menu>
+      </v-list-item>
+      <v-list-item class="px-0">
+        <LazyNavBarSearch />
       </v-list-item>
     </v-list>
     <v-spacer />

@@ -1,0 +1,44 @@
+.home-guides {
+  &--card {
+    overflow: hidden;
+    & > div {
+      position: relative;
+      overflow: hidden;
+    }
+
+    &__image {
+      transition: all 0.45s ease-in;
+    }
+
+    &__social-links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      transition: all 0.45s ease-in;
+      transition-delay: 0.4s;
+      background: rgba(0, 0, 0, 0.4);
+      transform: translate(-100%, 0);
+      opacity: 0;
+      @include langRtl {
+        left: unset;
+        right: 0;
+        transform: translate(100%, 0);
+      }
+    }
+    &:hover {
+      .home-guides--card__image {
+        transform: scale(1.2) !important;
+      }
+      .home-guides--card__social-links {
+        transform: translate(0%);
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,10 +1,15 @@
 <template>
   <v-col :md="6" :lg="4" :xlg="4" class="wow fadeInUp" data-wow-duration="1s">
-    <v-card class="home-events--card mx-auto my-6" max-width="374">
+    <v-card
+      class="home-events--card mx-auto my-6"
+      max-width="374"
+      :href="localePath('/events/145')"
+    >
       <v-img
         height="250"
         src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
         class="home-events--card__img"
+        alt="event"
       ></v-img>
       <div class="home-events--card-desc">
         <v-card-title class="home-events--card-desc__title">

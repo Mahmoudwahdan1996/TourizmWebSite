@@ -3,7 +3,7 @@
     <div class="home-testi--overlay">
       <v-container>
         <v-row>
-          <v-col cols="8">
+          <v-col :sm="12" :md="8" class="text-sm-center text-md-start">
             <h2 class="mb-6">What Our Client Say About Us</h2>
             <p>
               Duis rutrum nisl urna. Maecenas vel libero faucibus nisi venenatis
@@ -11,7 +11,10 @@
               pellentesque at nunc eget consectetur.
             </p>
           </v-col>
-          <v-col class="align-self-end d-flex justify-space-around" cols="4">
+          <v-col
+            class="align-self-end justify-space-around d-none d-md-flex"
+            cols="4"
+          >
             <v-btn
               class="mx-2"
               fab
@@ -34,24 +37,30 @@
             </v-btn>
           </v-col>
         </v-row>
-        <v-row>
-          <LazySwiperWrapper ref="swiper_ref" :breakpoints="breakpoints">
-            <swiper-slide>
-              <HomeTestimnialsCard />
-            </swiper-slide>
-            <swiper-slide>
-              <HomeTestimnialsCard />
-            </swiper-slide>
-            <swiper-slide>
-              <HomeTestimnialsCard />
-            </swiper-slide>
-            <swiper-slide>
-              <HomeTestimnialsCard />
-            </swiper-slide>
-            <swiper-slide>
-              <HomeTestimnialsCard />
-            </swiper-slide>
-          </LazySwiperWrapper>
+        <v-row class="mt-16">
+          <v-col cols="12">
+            <LazySwiperWrapper
+              ref="swiper_ref"
+              :breakpoints="breakpoints"
+              :options="options"
+            >
+              <swiper-slide>
+                <HomeTestimnialsCard />
+              </swiper-slide>
+              <swiper-slide>
+                <HomeTestimnialsCard />
+              </swiper-slide>
+              <swiper-slide>
+                <HomeTestimnialsCard />
+              </swiper-slide>
+              <swiper-slide>
+                <HomeTestimnialsCard />
+              </swiper-slide>
+              <swiper-slide>
+                <HomeTestimnialsCard />
+              </swiper-slide>
+            </LazySwiperWrapper>
+          </v-col>
         </v-row>
       </v-container>
     </div>
@@ -93,6 +102,9 @@ export default {
           slidesPerView: 1,
           spaceBetween: 30,
         },
+      },
+      options: {
+        autoplay: true,
       },
     };
   },

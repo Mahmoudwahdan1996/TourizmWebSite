@@ -37,7 +37,7 @@
           </template>
         </v-text-field>
       </template>
-      <v-date-picker v-model="form[name]" no-title scrollable>
+      <v-date-picker v-model="form[name]" no-title scrollable :min="minDate">
         <v-spacer></v-spacer>
         <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>
         <v-btn text color="primary" @click="$refs.menu.save(date)"> OK </v-btn>
@@ -45,7 +45,6 @@
     </v-menu>
   </form-group>
 </template>
-
 
 <script>
 export default {
@@ -63,6 +62,26 @@ export default {
     name: {
       type: String,
       default: () => "",
+    },
+    min: {
+      type: String,
+      default: function () {
+        return new Date().toISOString().substr(0, 10);
+      },
+    },
+    isDateSelectable: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
+  computed: {
+    minDate() {
+      if (this.isDateSelectable) {
+        return this.min;
+      } else {
+        return null; // Set to null to allow all dates
+      }
     },
   },
 };

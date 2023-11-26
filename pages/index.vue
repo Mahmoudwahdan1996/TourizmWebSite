@@ -5,6 +5,8 @@
     <LazyHomeEvents />
 
     <LazyHomeTestimnials />
+
+    <LazyHomeTourGuides />
   </main>
 </template>
 
