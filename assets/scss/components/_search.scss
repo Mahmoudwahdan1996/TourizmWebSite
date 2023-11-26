@@ -1,0 +1,58 @@
+.search {
+  @include screen(400px) {
+    &.container {
+      padding: 10px 10px;
+    }
+  }
+
+  .v-card__text {
+    line-height: 1.5rem !important;
+  }
+  &__btn {
+    background-color: transparent !important;
+    transition: all 0.4s ease-in-out;
+    padding-top: 0;
+    padding-bottom: 0;
+    .v-btn__content {
+      transition: all 0.4s ease-in-out;
+      color: var(--primary) !important;
+    }
+  }
+  &__btn:hover {
+    background-color: var(--primary) !important;
+    .v-btn__content {
+      color: #fff !important;
+    }
+  }
+
+  &__card {
+    padding: 1rem;
+    &--content {
+      &-item {
+        border: 1px solid #ddd;
+        margin: 0;
+
+        @include screen(1268px) {
+          margin: 1rem 0 0;
+        }
+
+        .icon {
+          color: var(--primary);
+        }
+        .v-text-field {
+          margin-top: 0 !important;
+          padding-top: 0 !important;
+        }
+
+        &__input {
+          .v-input__slot {
+            border: none !important;
+            &:hover {
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

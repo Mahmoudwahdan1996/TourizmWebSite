@@ -1,6 +1,12 @@
 <template>
   <main class="home">
     <LazyHomeHero />
+
+    <LazyHomeEvents />
+
+    <LazyHomeTestimnials />
+
+    <LazyHomeTourGuides />
   </main>
 </template>
 

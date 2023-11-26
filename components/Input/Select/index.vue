@@ -7,7 +7,9 @@
         >
       </v-label>
       <v-select
-        :hint="$t(`hint_${name}`)"
+        :hint="hint"
+        :placeholder="placeholder"
+        :class="dynamicClass"
         persistent-hint
         v-bind="attrs"
         :id="name"
@@ -19,6 +21,7 @@
         item-text="name"
         item-value="id"
         v-on="listeners"
+        hide-details="auto"
       >
       </v-select>
     </template>
@@ -45,6 +48,18 @@ export default {
     items: {
       type: Array,
       default: () => [],
+    },
+    hint: {
+      type: String,
+      default: () => "",
+    },
+    placeholder: {
+      type: String,
+      default: () => "",
+    },
+    dynamicClass: {
+      type: String,
+      default: () => "",
     },
   },
 };

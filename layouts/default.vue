@@ -3,7 +3,9 @@
     <v-app v-if="!loading" dark>
       <LazyPreloader />
       <LazyLayoutHeader />
-      <nuxt :nuxt-child-key="$route.fullPath" />
+      <v-main>
+        <nuxt :nuxt-child-key="$route.fullPath" />
+      </v-main>
       <LazyLayoutFooter />
     </v-app>
 
@@ -38,7 +40,6 @@ export default {
     };
   },
   mounted() {
-
     this.$nextTick(() => {
       this.loading = false;
     });
@@ -69,6 +70,5 @@ export default {
       immediate: true,
     },
   },
-
 };
 </script>

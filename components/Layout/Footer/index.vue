@@ -1,42 +1,140 @@
 <template>
-  <footer class="footer mt-15 pt-5">
-   
+  <v-footer class="footer mt-15 pt-5">
+    <v-container>
+      <v-row>
+        <v-col cols="12" :lg="4" class="footer-first">
+          <div>
+            <v-img
+              src="https://turio-wp.b-cdn.net/wp-content/uploads/2022/10/logo2-1.svg"
+              alt="logo haicking"
+              width="126"
+              height="42"
+              contain
+            ></v-img>
+          </div>
+          <p style="color: #fff" class="mt-6 w-100">
+            Duis rutrum nisl urna. Maecenas vel libero faucibus nisi venenatis
+            hendrerit a id lectus. Suspendissendt molestie turpis nec lacinia
+            vehicula.
+          </p>
 
-    <section class="light-primary">
-      <v-container>
-        <v-row>
-          <v-col cols="12">
-            <div class="py-2 d-flex gap-sm">
-              <p>
-                {{ $t("tax_number") + ": " + settings["otas_tax_number"] }}
-              </p>
+          <h6 style="color: var(--primary); font-size: 1rem" class="mt-3">
+            Working Day : Monday - Firday (9AM - 5PM)
+          </h6>
+          <div class="mt-12">
+            <h5 style="color: #fff">Follow Us On :</h5>
+            <ul
+              class="footer-first--social-icons d-flex align-itesm-center justify-content-start gap-sm mt-3"
+            >
+              <li>
+                <v-btn href="https://www.instagram.com/" fab small>
+                  <v-icon tag="i"> mdi-instagram </v-icon>
+                </v-btn>
+              </li>
 
-              <p>
-                {{
-                  $t("commercial_register") +
-                  ": " +
-                  settings["otas_commercial_registration_number"]
-                }}
-              </p>
+              <li>
+                <v-btn href="https://www.facebook.com/" fab small>
+                  <v-icon tag="i"> mdi-facebook</v-icon>
+                </v-btn>
+              </li>
+
+              <li>
+                <v-btn href="https://www.twitter.com/" fab small>
+                  <v-icon tag="i"> mdi-twitter</v-icon>
+                </v-btn>
+              </li>
+
+              <li>
+                <v-btn href="https://www.whatsapp.com/" fab small>
+                  <v-icon tag="i"> mdi-whatsapp</v-icon>
+                </v-btn>
+              </li>
+            </ul>
+          </div>
+        </v-col>
+        <v-col :lg="2" :md="4" style="color: #fff" class="footer-second">
+          <h4 class="mb-4 text-h5">Quick Links</h4>
+          <v-list-item>
+            <v-list-item-title>Guide</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Blog Standard</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Contact Us</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Destination</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>FAQ</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Gallery</v-list-item-title>
+          </v-list-item>
+        </v-col>
+        <v-col :lg="2" :md="4" style="color: #fff" class="footer-second">
+          <h4 class="mb-4 text-h5">Tour Type</h4>
+          <v-list-item>
+            <v-list-item-title>City Tour</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Hill Town</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Family</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Adventure</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Escorted Tour</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Couple</v-list-item-title>
+          </v-list-item>
+        </v-col>
+        <v-col :lg="4" :md="8" class="footer-third" style="color: #fff">
+          <h4 class="mb-4 text-h5">Contact Us</h4>
+          <div class="d-flex align-center justify-start gap-sm">
+            <div>
+              <v-icon color="#fff">mdi-phone-outline</v-icon>
             </div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
+            <div
+              class="d-flex justify-center align-center flex-column footer-third__contact"
+            >
+              <a href="tel:+880-566-1111-985">+880-566-1111-985</a>
+              <a href="tel:+880-657-1111-576">+880-657-1111-576</a>
+            </div>
+          </div>
 
-    <section class="secondary">
-      <v-container>
-        <v-row>
-          <v-col cols="12">
-            <p class="white--text text-center d-flex justify-center">
-              {{ $t("right_reserved") }} &copy; {{ new Date().getFullYear() }}
-              {{ $t("to_otas") }}
-            </p>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
-  </footer>
+          <div class="d-flex align-center justify-start gap-sm mt-6">
+            <div>
+              <v-icon color="#fff">mdi-email</v-icon>
+            </div>
+            <div
+              class="d-flex justify-center align-center flex-column footer-third__contact"
+            >
+              <a href="mailto:info@example.com">info@example.com</a>
+              <a href="mailto:info@support.com">info@support.com</a>
+            </div>
+          </div>
+
+          <div class="d-flex align-center justify-start gap-sm mt-6">
+            <div>
+              <v-icon color="#fff">mdi-map-marker-outline</v-icon>
+            </div>
+            <div
+              class="d-flex justify-center align-start flex-column footer-third__address"
+            >
+              <p>168/170, Avenue 01</p>
+              <p>Mirpur DOHS, Bangladesh</p>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-footer>
 </template>
 
 <script>

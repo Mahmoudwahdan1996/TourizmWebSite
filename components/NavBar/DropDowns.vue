@@ -8,7 +8,6 @@
             text
             v-bind="attrs"
             v-on="on"
-            class="mb-5 mb-md-0"
             :class="isDesktop ? 'white--text' : ''"
           >
             <span v-text="currentLocale.code"> </span>

@@ -9,28 +9,25 @@
       :disable-resize-watcher="true"
     >
       <v-list class="text-center pa-0">
-        <v-list-item
-          class="px-2 mb-5 py-2"
-          :to="localePath('/')"
-          style="background-color: #ffeee6"
-        >
+        <v-list-item class="px-2 mb-5 py-2" :to="localePath('/')">
           <v-img
             contain
-            :src="require('@/assets/images/logo-new.svg')"
-            alt="OTAS logo"
+            src="https://turio-wp.b-cdn.net/wp-content/uploads/2022/10/logo2-1.svg"
+            alt="haicking logo"
           />
         </v-list-item>
       </v-list>
       <v-list flat color="transparent" class="app-header__list">
-        <v-list-item
-          v-for="(item, index) in mobItems"
-          :key="index"
-          class="px-0 justify-center d-flex"
-          dense
-          :to="localePath(item.to)"
-        >
-          {{ item.title }}
-        </v-list-item>
+        <div v-for="(item, index) in mobItems" :key="index">
+          <v-list-item
+            class="px-0 justify-center d-flex"
+            dense
+            :to="localePath(item.to)"
+          >
+            {{ item.title }}
+          </v-list-item>
+          <v-divider></v-divider>
+        </div>
 
         <LazyNavBarDropDowns :isDesktop="false" />
       </v-list>
@@ -42,7 +39,6 @@
       :clipped-left="clipped"
       fixed
       app
-      v-onScroll
       style="z-index: 16; width: 100%; left: 0; right: 0"
     >
       <!-- <v-container class="pa-0"> -->
@@ -54,6 +50,9 @@
           @click.stop="drawer = !drawer"
           color="white"
         />
+        <span class="hidden-md-and-up">
+          <LazyNavBarSearch />
+        </span>
       </div>
       <!-- </v-container> -->
       <nuxt-link
@@ -63,9 +62,9 @@
       >
         <img
           data-wow-duration="2s"
-          :src="require('@/assets/images/logo-new.svg')"
+          src="https://turio-wp.b-cdn.net/wp-content/uploads/2022/10/logo2-1.svg"
           height="35px"
-          alt="OTAS logo"
+          alt="haicking logo"
           class="move-logo-reverse hidden-md-and-up wow fadeInLeft"
         />
       </nuxt-link>
@@ -75,19 +74,19 @@
 
 <script>
 export default {
-  directives: {
-    onScroll: {
-      bind(el, bind) {
-        document.addEventListener("scroll", (e) => {
-          if (e.path[1].scrollY > 100) {
-            el.classList.add("active-header");
-          } else {
-            el.classList.remove("active-header");
-          }
-        });
-      },
-    },
-  },
+  // directives: {
+  //   onScroll: {
+  //     bind(el, bind) {
+  //       document.addEventListener("scroll", (e) => {
+  //         if (e.path[1].scrollY > 100) {
+  //           el.classList.add("active-header");
+  //         } else {
+  //           el.classList.remove("active-header");
+  //         }
+  //       });
+  //     },
+  //   },
+  // },
   data() {
     return {
       clipped: false,
@@ -179,8 +178,6 @@ export default {
   },
 };
 </script>
-
-
 
 <style lang="scss" scoped>
 .app-header__list {

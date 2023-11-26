@@ -8,15 +8,15 @@ export const mutations = {
 };
 export const actions = {
   setSettings({ commit }) {
-    this.$http.get({ resource: "settings" }).then((res) => {
-      const { data: settings } = res.data || [];
-      const convertedSettings = settings.reduce((acc, currentSetting) => {
-        acc[currentSetting.key] = currentSetting.value;
-        return acc;
-      }, {});
-      commit("SET_SETTINGS", convertedSettings);
-      return settings;
-    });
+    // this.$http.get({ resource: "settings" }).then((res) => {
+    //   const { data: settings } = res.data || [];
+    //   const convertedSettings = settings.reduce((acc, currentSetting) => {
+    //     acc[currentSetting.key] = currentSetting.value;
+    //     return acc;
+    //   }, {});
+    //   commit("SET_SETTINGS", convertedSettings);
+    //   return settings;
+    // });
   },
 };
 export const getters = {

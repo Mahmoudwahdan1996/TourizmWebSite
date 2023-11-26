@@ -1,0 +1,186 @@
+.event {
+  &-details {
+    &--header {
+      &__location {
+        border-bottom: 1px solid #eeeeee;
+      }
+    }
+
+    &--tabs {
+      margin-top: 1rem;
+
+      .v-tab {
+        .v-btn {
+          background-color: transparent !important;
+          border: 1px solid var(--primary) !important;
+          color: #2d373c !important;
+        }
+        &::before {
+          content: unset;
+        }
+        &:hover {
+          .v-btn {
+            background-color: var(--primary) !important;
+            color: #fff !important;
+          }
+        }
+      }
+      .v-tab--active {
+        .v-btn {
+          background-color: var(--primary) !important;
+          color: #fff !important;
+        }
+      }
+
+      &-information {
+        &__title {
+          font-weight: 700;
+          font-size: 1.8rem;
+          color: var(--text-dark);
+        }
+
+        &__desc {
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 28px;
+          color: #666666;
+          font-family: "Montserrat", sans-serif;
+        }
+        &__table {
+          width: 100%;
+          border-collapse: collapse;
+          th,
+          td {
+            border: 1px solid #eee;
+            padding: 10px 20px;
+          }
+          th {
+            text-align: start;
+          }
+        }
+      }
+
+      &-plane {
+        &__title {
+          font-weight: 700;
+          font-size: 1.8rem;
+          color: var(--text-dark);
+        }
+
+        &__desc {
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 28px;
+          color: #666666;
+          font-family: "Montserrat", sans-serif;
+        }
+
+        &__panels {
+          gap: 1rem;
+          &--panel {
+            margin-top: 1.8rem;
+            &::before {
+              content: unset !important;
+            }
+
+            &::after {
+              content: unset !important;
+            }
+            &__header {
+              padding: 0 30px;
+              padding-left: 0;
+              box-shadow: 3px 5px 35px rgba(86, 68, 169, 0.1);
+              border-radius: 80px;
+              width: 90%;
+              &::before {
+                content: unset !important;
+              }
+              &--title {
+                display: flex;
+                .paln-index-circle {
+                  min-width: 65px;
+                  height: 75px;
+                  background: var(--primary);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border: 5px solid rgba(22, 43, 50, 0.5);
+                  border-radius: 50%;
+                  font-weight: 700;
+                  font-size: 32px;
+                  color: #ffffff;
+                  margin-right: 25px;
+                }
+              }
+            }
+            &__content {
+              padding: 1rem 1.25rem;
+              padding-left: 0;
+              padding-top: 30px;
+              padding-bottom: 0;
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+
+      &-TourGallary {
+        .col:nth-child(3) {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+
+        &__img {
+          transition: all 1s ease-in-out;
+          &:hover {
+            transform: scale(1.08);
+          }
+        }
+      }
+    }
+  }
+
+  &-booking {
+    position: relative;
+    text-align: center;
+    padding: 35px 30px;
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    &__subtitle {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+}
+
+.TourGallary-dialog {
+  .dialog__card {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  &__card {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: relative;
+    &--title {
+      button {
+        color: #fff !important;
+      }
+    }
+    &--actions {
+      position: absolute;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      button {
+        background-color: transparent !important;
+        color: #fff !important;
+      }
+    }
+  }
+}

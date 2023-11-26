@@ -2,14 +2,10 @@ import theme from "./utils/theme";
 const baseUrl = function () {
   if (process.env.NODE_ENV === "production") {
     return "https://v2.api.egyptkey.com/api/";
-  } 
-  else {
+  } else {
     return "https://v2.api.egyptkey.com/api/";
   }
 };
-
-
-
 
 export default {
   head: {
@@ -23,29 +19,33 @@ export default {
       },
       { hid: "description", name: "description", content: "" },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' } ,
-    { rel:"stylesheet", href:"https://cdn.jsdelivr.xyz/npm/@mdi/font@latest/css/materialdesignicons.min.css"}],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.svg" },
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.xyz/npm/@mdi/font@latest/css/materialdesignicons.min.css",
+      },
+    ],
     script: [
-     
       {
         src: "js/wow.min.js",
-
       },
       {
         src: "https://secure.clickpay.com.sa/payment/js/paylib.js",
-
       },
       {
         src: "js/main.js",
-        body: true
+        body: true,
       },
-
-
     ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ["@/assets/scss/main.scss", "@/assets/fonts/stylesheet.css", "@/assets/animate.css"],
+  css: [
+    "@/assets/scss/main.scss",
+    "@/assets/fonts/stylesheet.css",
+    "@/assets/animate.css",
+  ],
   pageTransition: {
     name: "fade",
     mode: "out-in",
@@ -166,6 +166,7 @@ export default {
     { src: "@/plugins/facebook.js", ssr: false },
     { src: "@/plugins/vuelidate.js" },
     { src: "@/plugins/toasted.js", ssr: false },
+    { src: "@/plugins/vue-awesome-swiper.js", ssr: false },
   ],
   loadingIndicator: {
     name: "cube-grid",

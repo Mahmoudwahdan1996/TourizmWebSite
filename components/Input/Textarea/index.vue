@@ -1,7 +1,7 @@
 <template>
   <form-group :name="name" :attribute="name">
     <template slot-scope="{ attrs, listeners }">
-      <v-label :for="name">
+      <v-label :for="name" v-if="showLabel">
         <strong class="font-weight-dark">
           {{ label ? $t(label) : $t(name) }}</strong
         >
@@ -21,6 +21,9 @@
         rounded
         flat
         v-on="listeners"
+        :placeholder="placeholder"
+        :class="dynamicClass"
+        :prepend-inner-icon="prependInnerIcon"
       >
       </v-textarea>
     </template>
@@ -50,6 +53,23 @@ export default {
     label: {
       type: String,
       default: () => null,
+    },
+    showLabel: {
+      type: Boolean,
+      default: () => true,
+    },
+    prependInnerIcon: {
+      type: String,
+      default: () => "",
+    },
+
+    placeholder: {
+      type: String,
+      default: () => "",
+    },
+    dynamicClass: {
+      type: String,
+      default: () => "",
     },
   },
 };
